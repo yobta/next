@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["@logux/eslint-config/ts", "next/core-web-vitals"],
+  "rules": {
+    "prefer-let/prefer-let": "off",
+    "prefer-const": "error"
+  }
 }
