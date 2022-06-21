@@ -1,9 +1,9 @@
-import { Input } from "@yobta/ui";
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { Input } from '@yobta/ui'
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
 
-import styles from "../styles/Home.module.css";
+import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <Input caption="Test yobta" className="w-60" />
 
         <p className={styles.description}>
-          Get started by editing{" "}
+          Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
 
@@ -63,14 +63,14 @@ const Home: NextPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
