@@ -23,4 +23,5 @@ ncu:
 	npm i
 
 build:
+	make check
 	npm run build
