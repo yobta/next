@@ -1,6 +1,39 @@
 import { Input } from '@yobta/ui'
+import {
+  asyncYobta,
+  awaitSubmitYobta,
+  enumYobta,
+  formYobta,
+  requiredYobta,
+  shapeYobta,
+  stringYobta,
+  validityYobta,
+} from '@yobta/validator'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { pushError } from '../components/ui/ErrorToast'
+import { pushNotification } from '../components/ui/NotificationToast'
+
+const handleForm = asyncYobta(
+  formYobta(),
+  shapeYobta({
+    message: [requiredYobta('Please write a message'), stringYobta()],
+    target: [
+      requiredYobta('Please select a type'),
+      enumYobta(['notification', 'error']),
+    ],
+  }),
+  requiredYobta(),
+  awaitSubmitYobta(async ({ target, message }) => {
+    if (target === 'error') {
+      const error = new Error(message)
+      pushError(error)
+    } else {
+      pushNotification({ message })
+    }
+  }),
+  validityYobta()
+)
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +46,30 @@ const Home: NextPage = () => {
 
       <main className="container max-w-lg mx-auto px-4">
         <h1 className="text-2xl my-4">Welcome Yobta</h1>
-
-        <Input caption="Test yobta" />
-        <button className="ui-button">Yarr</button>
+        <form noValidate onSubmit={handleForm}>
+          <Input caption="Message yobta" name="message" />
+          <div className="ui-menu">
+            <label className="ui-menu-group">
+              <input
+                className="ui-radio ui-addon"
+                type="radio"
+                name="target"
+                value="error"
+              />
+              Error
+            </label>
+            <label className="ui-menu-group">
+              <input
+                className="ui-radio ui-addon"
+                type="radio"
+                name="target"
+                value="notification"
+              />
+              Notification
+            </label>
+          </div>
+          <button className="ui-button">Yarr</button>
+        </form>
       </main>
 
       <footer>footer</footer>
