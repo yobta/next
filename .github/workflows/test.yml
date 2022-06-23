@@ -16,7 +16,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Run checks and build
+      - name: Build with checks
         run: make build
         env:
           FORCE_COLOR: 2
@@ -27,7 +27,6 @@ jobs:
         node-version:
           - 17
           - 16
-          - 14
     name: Node.js ${{ matrix.node-version }} Quick
     steps:
       - name: Checkout the repository
@@ -39,7 +38,7 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Run Checks
-        run: make check
+      - name: Build without checks
+        run: npm run build
         env:
           FORCE_COLOR: 2
