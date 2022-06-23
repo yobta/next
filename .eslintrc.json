@@ -1,6 +1,7 @@
 {
   "extends": ["@logux/eslint-config/ts", "next/core-web-vitals"],
   "rules": {
+    "import/extensions": "never",
     "prefer-let/prefer-let": "off",
     "prefer-const": "error"
   }

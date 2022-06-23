@@ -7,12 +7,8 @@ import {
   RefAttributes,
 } from 'react'
 
-import { useCountdown } from '../../../hooks/useCountDown'
-import {
-  ShowHideState,
-  useShowHide,
-  visibleStates,
-} from '../../../hooks/useShowHide'
+import { useCountdown } from './useCountDown'
+import { ShowHideState, useShowHide, visibleStates } from './useShowHide'
 import { ToastContextProvider } from './toastContext'
 
 type BaseProps = ComponentProps<'div'>

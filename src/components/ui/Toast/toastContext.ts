@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import { ShowHideState } from '../../../hooks/useShowHide'
+import { ShowHideState } from './useShowHide'
 
 type ToastContext = {
   autoHide: boolean
