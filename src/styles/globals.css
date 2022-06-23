@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --y-color-paper: #fff;
+}
+
 body {
-  @apply ui-bg-paper;
+  @apply ui-bg-paper ui-text-ink;
 }

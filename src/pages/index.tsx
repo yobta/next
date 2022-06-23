@@ -26,6 +26,7 @@ const handleForm = asyncYobta(
   }),
   requiredYobta(),
   awaitSubmitYobta(async ({ target, message }) => {
+    console.log('target: ', target)
     if (target === 'error') {
       const error = new Error(message)
       pushError(error)
@@ -69,7 +70,9 @@ const Home: NextPage = () => {
               Notification
             </label>
           </div>
-          <button className="ui-button">Yarr</button>
+          <button className="ui-button-primary" type="submit">
+            Yarr
+          </button>
         </form>
       </main>
 
