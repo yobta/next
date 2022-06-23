@@ -17,3 +17,10 @@ check:
 	make typecheck
 	make lint
 	npm run test
+
+ncu:
+	npm run ncu
+	npm i
+
+build:
+	npm run build

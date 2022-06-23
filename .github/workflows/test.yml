@@ -18,6 +18,8 @@ jobs:
         run: npm ci
       - name: Run checks
         run: make check
+      - name: Build
+        run: make build
         env:
           FORCE_COLOR: 2
   short:
