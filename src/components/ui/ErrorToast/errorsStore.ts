@@ -1,6 +1,6 @@
 import { observableYobta } from '@yobta/stores'
 import { useObservable } from '@yobta/stores/react'
-import { YobtaErrorReporter } from 'yobta'
+import { YobtaErrorReporter } from '@yobta/validator'
 
 export interface ErrorLike {
   name: string
@@ -34,14 +34,14 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
   const rootLevelErrors = errors.filter(({ field }) => field === '@')
   if (rootLevelErrors.length < errors.length) {
     pushError({
-      name: 'Ошибка!',
-      message: 'Необходимо заполнить форму',
+      name: 'Error!',
+      message: 'Need to fill out a form',
       type: 'YobtaError',
     })
   }
   if (rootLevelErrors.length) {
     rootLevelErrors.forEach((error) => {
-      // TODO notify
+      // TODO notify basgsnag for example
     })
     pushError(...rootLevelErrors)
   }

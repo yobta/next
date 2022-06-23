@@ -2,7 +2,10 @@
 
 module.exports = {
   darkMode: 'media',
-  content: ['./**/*.{js,ts,jsx,tsx}', './node_modules/@yobta/ui/**/*.{js,jsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@yobta/ui/**/*.{js,jsx}',
+  ],
   presets: [require('@yobta/ui/tailwind-preset')],
   theme: {
     extend: {

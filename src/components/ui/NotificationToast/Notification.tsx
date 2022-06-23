@@ -1,4 +1,4 @@
-import { Clock, Cross } from '@sdlk/react-entypo'
+import { Clock, Cross } from '@yobta/ui'
 
 import { NotificationLike } from './notificationStore'
 import { useToastContext } from '../Toast'

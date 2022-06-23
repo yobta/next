@@ -1,4 +1,4 @@
-import { Clock, Cross } from '@sdlk/react-entypo'
+import { Clock, Cross } from '@yobta/ui'
 
 import { ErrorLike } from './errorsStore'
 import { useToastContext } from '../Toast'
@@ -12,7 +12,7 @@ export const Error: ErrorFC = ({ error }): JSX.Element => {
   return (
     <>
       <div className="flex-1">
-        <h6 className="text-xs font-bold">Ошибка!</h6>
+        <h6 className="text-xs font-bold">Error!</h6>
         <div className="whitespace-pre-line">{error?.message}</div>
         {autoHide && (
           <div className="ui-badge bg-ink-border text-xs inline-flex gap-1 items-center">
