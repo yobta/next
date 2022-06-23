@@ -71,3 +71,5 @@ export const Toast: ForwardRefExoticComponent<
     )
   }
 )
+
+Toast.displayName = 'Toast'

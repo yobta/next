@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest src --coverage --run",
-    "test:watch": "vitest src --coverage"
+    "test:watch": "vitest src --coverage",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.0",

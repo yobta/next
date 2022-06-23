@@ -17,8 +17,8 @@ export const useCountdown: CountdownHook = ({
   callback,
   disabled,
 }) => {
-  let initialState = delayInSeconds * timeout
-  let [state, setState] = useState(initialState)
+  const initialState = delayInSeconds * timeout
+  const [state, setState] = useState(initialState)
   useEffect(() => {
     setState(initialState)
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -35,9 +35,9 @@ export const useCountdown: CountdownHook = ({
         })
       }
     }
-    let interval = setInterval(update, timeout)
+    const interval = setInterval(update, timeout)
 
-    let terminate = (): void => {
+    const terminate = (): void => {
       clearInterval(interval)
     }
 

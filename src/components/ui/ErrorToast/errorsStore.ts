@@ -42,6 +42,8 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
   if (rootLevelErrors.length) {
     rootLevelErrors.forEach((error) => {
       // TODO notify basgsnag for example
+      // eslint-disable-next-line no-console
+      console.error(error)
     })
     pushError(...rootLevelErrors)
   }
