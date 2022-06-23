@@ -9,3 +9,11 @@ pretty:
 
 test:
 	npm run test:watch
+
+typecheck:
+	npm run typecheck
+
+check:
+	make typecheck
+	make lint
+	npm run test

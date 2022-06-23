@@ -22,23 +22,23 @@ export const useShowHide: ShowHideHook = ({
   initialState,
   onClose: handleClose,
 }) => {
-  let [state, setState] = useState<ShowHideState>('invisible')
+  const [state, setState] = useState<ShowHideState>('invisible')
 
-  let hasVisibleState = visibleStates.has(state)
+  const hasVisibleState = visibleStates.has(state)
 
   useEffect(() => {
     if (initialState) {
       setState('entering')
     }
-  }, [])
+  }, [initialState])
 
-  let handleClick: VoidFunction = useCallback(() => {
+  const handleClick: VoidFunction = useCallback(() => {
     if (state === 'visible') {
       setState('exiting')
     }
   }, [state])
 
-  let handleAnimationEnd: VoidFunction = useCallback(() => {
+  const handleAnimationEnd: VoidFunction = useCallback(() => {
     if (state === 'entering') {
       setState('visible')
     }
@@ -69,7 +69,7 @@ export const useShowHide: ShowHideHook = ({
     if (!initialState && hasVisibleState) {
       setState('exiting')
     }
-  }, [initialState, hasVisibleState])
+  }, [initialState, hasVisibleState, state])
 
   return { state, handleAnimationEnd, handleClick }
 }

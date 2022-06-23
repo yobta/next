@@ -11,6 +11,7 @@ import {
 } from '@yobta/validator'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
 import { pushError } from '../components/ui/ErrorToast'
 import { pushNotification } from '../components/ui/NotificationToast'
 
