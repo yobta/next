@@ -15,14 +15,14 @@ export const Error: ErrorFC = ({ error }): JSX.Element => {
         <h6 className="text-xs font-bold">Error!</h6>
         <div className="whitespace-pre-line">{error?.message}</div>
         {autoHide && (
-          <div className="ui-badge bg-ink-border text-xs inline-flex gap-1 items-center">
+          <div className="yobta-badge bg-ink-border text-xs inline-flex gap-1 items-center">
             <Clock className="w-3 h-3" />
             {countdown}
           </div>
         )}
       </div>
       <button
-        className="ui-button rounded-full w-12 h-12 p-0"
+        className="yobta-button rounded-full w-12 h-12 p-0"
         type="button"
         onClick={handleClick}
       >

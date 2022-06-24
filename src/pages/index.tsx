@@ -50,19 +50,19 @@ const Home: NextPage = () => {
         <h1 className="text-2xl my-4">Welcome Yobta</h1>
         <form noValidate onSubmit={handleForm}>
           <Input caption="Message yobta" name="message" />
-          <div className="ui-menu">
-            <label className="ui-menu-group">
+          <div className="yobta-menu">
+            <label className="yobta-menu-group">
               <input
-                className="ui-radio ui-addon"
+                className="yobta-radio yobta-addon"
                 type="radio"
                 name="target"
                 value="error"
               />
               Error
             </label>
-            <label className="ui-menu-group">
+            <label className="yobta-menu-group">
               <input
-                className="ui-radio ui-addon"
+                className="yobta-radio yobta-addon"
                 type="radio"
                 name="target"
                 value="notification"
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
               Notification
             </label>
           </div>
-          <button className="ui-button-primary" type="submit">
+          <button className="yobta-button-primary" type="submit">
             Yarr
           </button>
         </form>

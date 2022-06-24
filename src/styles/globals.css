@@ -7,5 +7,5 @@
 }
 
 body {
-  @apply ui-bg-paper ui-text-ink;
+  @apply yobta-paper;
 }
