@@ -20,7 +20,7 @@ export const ErrorToast = (): JSX.Element => {
   return (
     <Toast
       className={clsx(
-        'fixed z-50 ui-bg-error left-4 right-4 bottom-4 rounded text-ink-dark',
+        'fixed z-50 yobta-bg-error left-4 right-4 bottom-4 rounded text-ink-dark',
         'p-2 pl-4 max-w-sm shadow-md flex items-center justify-center gap-2',
         'sm:w-full sm:right-auto'
       )}
