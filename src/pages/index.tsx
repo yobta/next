@@ -26,7 +26,6 @@ const handleForm = asyncYobta(
   }),
   requiredYobta(),
   awaitSubmitYobta(async ({ target, message }) => {
-    console.log('target: ', target)
     if (target === 'error') {
       const error = new Error(message)
       pushError(error)
