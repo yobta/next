@@ -57,6 +57,7 @@ export const Toast: ForwardRefExoticComponent<
           {...rest}
           className={clsx(
             typeof className === 'function' ? className(state) : className,
+            'transform-gpu',
             visibleStates.has(state)
               ? 'animate-slide-in-bottom'
               : 'animate-slide-out-bottom pointer-events-none',
