@@ -20,7 +20,7 @@ export const NotificationToast = (): JSX.Element => {
   return (
     <Toast
       className={clsx(
-        'fixed z-50 right-4 bottom-4 left-4 rounded yobta-bg-info text-ink-dark',
+        'fixed z-50 right-4 bottom-4 left-4 rounded yobta-info',
         'p-2 pl-4 max-w-sm shadow-md flex items-center justify-center gap-2',
         'sm:w-full sm:left-auto'
       )}

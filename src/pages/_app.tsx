@@ -1,7 +1,8 @@
 import type { AppProps } from 'next/app'
 
-import { ErrorToast } from '../components/ui/ErrorToast'
-import { NotificationToast } from '../components/ui/NotificationToast'
+import { ConnectionToast } from '../components/ConnectionToast'
+import { ErrorToast } from '../components/ErrorToast'
+import { NotificationToast } from '../components/NotificationToast'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <Component {...pageProps} />
       <ErrorToast />
       <NotificationToast />
+      <ConnectionToast />
     </div>
   )
 }
