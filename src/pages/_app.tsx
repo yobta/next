@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import { StrictMode } from 'react'
 
 import { ConnectionToast } from '../components/ConnectionToast'
 import { ErrorToast } from '../components/ErrorToast'
@@ -7,12 +8,12 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <div>
+    <StrictMode>
       <Component {...pageProps} />
       <ErrorToast />
       <NotificationToast />
       <ConnectionToast />
-    </div>
+    </StrictMode>
   )
 }
 
