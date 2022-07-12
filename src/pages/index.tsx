@@ -69,7 +69,7 @@ const Home: NextPage = () => {
               Notification
             </label>
           </div>
-          <button className="yobta-button-primary" type="submit" onClick={}>
+          <button className="yobta-button-primary" type="submit">
             Yarr
           </button>
         </form>
