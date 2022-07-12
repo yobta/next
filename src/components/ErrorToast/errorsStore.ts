@@ -10,12 +10,13 @@ export interface ErrorLike {
 
 const errorsStore = observableYobta<ErrorLike[]>([])
 
-export const pushError = (...errors: ErrorLike[]): void => {
+export const pushError = (error: ErrorLike): void => {
   errorsStore.next((last) => {
-    const newErrors = errors.filter(
-      (righ) => !last.some((left) => left.message === righ.message)
-    )
-    return [...newErrors, ...last]
+    const newErrors = last.some((left) => left.message === error.message)
+      ? last
+      : [...last, error]
+
+    return newErrors
   })
 }
 
@@ -40,12 +41,7 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
     })
   }
   if (rootLevelErrors.length) {
-    rootLevelErrors.forEach((error) => {
-      // TODO notify basgsnag for example
-      // eslint-disable-next-line no-console
-      console.error(error)
-    })
-    pushError(...rootLevelErrors)
+    rootLevelErrors.forEach(pushError)
   }
 }
 

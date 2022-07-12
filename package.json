@@ -25,6 +25,7 @@
     "@yobta/ui": "^0.0.26",
     "@yobta/validator": "^0.0.37",
     "clsx": "^1.2.1",
+    "lodash": "^4.17.21",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@logux/eslint-config": "^47.2.0",
+    "@types/lodash": "^4.14.182",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
