@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         <form noValidate onSubmit={handleForm}>
           <Input caption="Message yobta" name="message" />
           <div className="yobta-menu">
-            <label className="yobta-menu-group">
+            <label className="yobta-menu-item">
               <input
                 className="yobta-radio yobta-addon"
                 type="radio"
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
               />
               Error
             </label>
-            <label className="yobta-menu-group">
+            <label className="yobta-menu-item">
               <input
                 className="yobta-radio yobta-addon"
                 type="radio"
