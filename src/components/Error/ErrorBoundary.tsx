@@ -1,8 +1,8 @@
 import { Component, ErrorInfo, ReactNode } from 'react'
 
-import { parseUnknownError } from '../../util/parseUnknownError'
-import { reportError } from '../../util/reportError'
-import { UnexpectedError } from '../UnexpectedError'
+import { parseUnknownError } from './parseUnknownError'
+import { reportError } from './reportError'
+import { UnexpectedError } from './UnexpectedError'
 
 type Props = {
   children: ReactNode

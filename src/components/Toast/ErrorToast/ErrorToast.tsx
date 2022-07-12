@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
-import { Toast } from '../Toast'
+import { Toast } from '..'
 import { popError, useError } from './errorsStore'
 import { Error } from './Error'
 

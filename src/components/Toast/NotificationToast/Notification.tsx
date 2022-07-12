@@ -1,19 +1,18 @@
 import { Clock, Cross } from '@yobta/ui'
 
-import { ErrorLike } from './errorsStore'
-import { useToastContext } from '../Toast'
+import { NotificationLike } from './notificationStore'
+import { useToastContext } from '../toastContext'
 
-interface ErrorFC {
-  (props: { error?: ErrorLike }): JSX.Element
+interface NotificationFC {
+  (props: { notification?: NotificationLike }): JSX.Element
 }
 
-export const Error: ErrorFC = ({ error }): JSX.Element => {
+export const Notification: NotificationFC = ({ notification }): JSX.Element => {
   const { autoHide, countdown, handleClick } = useToastContext()
   return (
     <>
       <div className="flex-1">
-        <h6 className="text-xs font-bold">Error!</h6>
-        <div className="whitespace-pre-line">{error?.message}</div>
+        <div className="whitespace-pre-line">{notification?.message}</div>
         {autoHide && (
           <div className="yobta-badge bg-ink-border text-xs inline-flex gap-1 items-center">
             <Clock className="w-3 h-3" />

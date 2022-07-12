@@ -12,8 +12,7 @@ import {
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { pushError } from '../components/ErrorToast'
-import { pushNotification } from '../components/NotificationToast'
+import { pushError, pushNotification } from '../components/Toast'
 
 const handleForm = asyncYobta(
   formYobta(),
