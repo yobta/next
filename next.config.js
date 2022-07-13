@@ -15,6 +15,7 @@ const plugins = [withMDX]
 const nextConfig = {
   experimental: { esmExternals: true },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  poweredByHeader: false,
   reactStrictMode: true,
   generateBuildId: async () => {
     const revision = require('child_process')
