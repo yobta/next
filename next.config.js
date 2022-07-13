@@ -1,3 +1,5 @@
+/* eslint-disable n/global-require */
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -14,6 +16,14 @@ const nextConfig = {
   experimental: { esmExternals: true },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
+  generateBuildId: async () => {
+    const revision = require('child_process')
+      .execSync('git rev-parse HEAD')
+      .toString()
+      .trim()
+      .substring(0, 5)
+    return revision
+  },
 }
 
 module.exports = () => plugins.reduce((acc, next) => next(acc), nextConfig)
