@@ -123,6 +123,33 @@
   --yobta-color-tooltip-text: #fcfcfc;
   --yobta-color-tooltip-text-dark: #414141; */
   /* #endregion */
+
+  /* #region  Selected colors */
+  /* --yobta-color-selected: #cbe6ff;
+  --yobta-color-selected-dark: #4b6278;
+  --yobta-color-selected-text: #414141;
+  --yobta-color-selected-text-dark: #fcfcfc;
+
+  --yobta-color-selected-2: #aed5fa;
+  --yobta-color-selected-2-dark: #5b81a5;
+  --yobta-color-selected-2-text: #414141;
+  --yobta-color-selected-2-text-dark: #fcfcfc;
+
+  --yobta-color-selected-3: #a8c2dc;
+  --yobta-color-selected-3-dark: #4b7194;
+  --yobta-color-selected-3-text: #414141;
+  --yobta-color-selected-3-text-dark: #fcfcfc;
+
+  --yobta-color-primary-selected: #fff0ab;
+  --yobta-color-primary-selected-dark: #f0de8b;
+  --yobta-color-primary-selected-text: #414141;
+  --yobta-color-primary-selected-text-dark: #414141;
+
+  --yobta-color-secondary-selected: #716cff;
+  --yobta-color-secondary-selected-dark: #7f7df1;
+  --yobta-color-secondary-selected-text: #fcfcfc;
+  --yobta-color-secondary-selected-text-dark: #fcfcfc; */
+  /* #endregion */
 }
 
 body {
