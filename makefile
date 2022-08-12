@@ -18,7 +18,7 @@ check:
 	make lint
 	npm run test
 
-ncu:
+up:
 	npm run ncu
 	npm i
 
