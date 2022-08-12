@@ -1,34 +1,39 @@
-import { useEffect, useState } from 'react'
-import clsx from 'clsx'
+import { CircleWithCross, Clock, Toast } from '@yobta/ui'
 
-import { Toast } from '../Toast'
-import { popError, useError } from './errorsStore'
-import { Error } from './Error'
+import { useError, popError } from '../../stores/errorsStore'
 
 export const ErrorToast = (): JSX.Element => {
-  const error = useError()
-  const [last, setLast] = useState(error)
-
-  useEffect(() => {
-    if (last !== error) {
-      setLast(error)
-    }
-  }, [last, error])
-
-  const visible = Boolean(error && last === error)
+  const [error] = useError()
 
   return (
-    <Toast
-      className={clsx(
-        'fixed z-50 left-4 right-4 bottom-4 rounded yobta-error',
-        'p-2 pl-4 max-w-sm shadow-md flex items-center justify-center gap-2',
-        'sm:w-full sm:right-auto'
-      )}
-      delayInSeconds={16}
-      onClose={popError}
-      visible={visible}
-    >
-      <Error error={error} />
-    </Toast>
+    <>
+      <Toast
+        className="yobta-error pr-2 max-w-sm items-start"
+        hideAfterSeconds={16}
+        onClose={popError}
+        placement="bottom-left"
+        visible={!!error}
+      >
+        {({ close, countdown }) => (
+          <>
+            <div>
+              <h6 className="text-sm font-semibold">{error?.name}</h6>
+              <p className="mb-2 line-clamp-2">{error?.message}</p>
+              <div className="yobta-badge -ml-2">
+                <Clock className="w-3 h-3" />
+                {countdown}
+              </div>
+            </div>
+            <button
+              type="button"
+              className="yobta-button w-12 h-12 p-0 rounded-full shrink-0"
+              onClick={close}
+            >
+              <CircleWithCross />
+            </button>
+          </>
+        )}
+      </Toast>
+    </>
   )
 }
