@@ -1,6 +1,6 @@
-import { CircleWithCross, Clock, Toast } from '@yobta/ui'
+import { Clock, Cross, Toast } from '@yobta/ui'
 
-import { useError, popError } from '../../stores/errorsStore'
+import { useError, popError } from '../../../stores/errorsStore'
 
 export const ErrorToast = (): JSX.Element => {
   const [error] = useError()
@@ -8,7 +8,7 @@ export const ErrorToast = (): JSX.Element => {
   return (
     <>
       <Toast
-        className="yobta-error pr-2 max-w-sm items-start"
+        className="yobta-error pr-2 w-screen max-w-sm items-start"
         hideAfterSeconds={16}
         onClose={popError}
         placement="bottom-left"
@@ -29,7 +29,7 @@ export const ErrorToast = (): JSX.Element => {
               className="yobta-button w-12 h-12 p-0 rounded-full shrink-0"
               onClick={close}
             >
-              <CircleWithCross />
+              <Cross />
             </button>
           </>
         )}

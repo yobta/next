@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app'
 
-import { ConnectionToast } from '../components/ConnectionToast'
-import { ErrorBoundary } from '../components/ErrorBoundary'
-import { ErrorToast } from '../components/ErrorToast'
-import { NotificationToast } from '../components/NotificationToast'
+import { ConnectionToast } from '../components/Toast/ConnectionToast'
+import { ErrorBoundary } from '../components/Error/ErrorBoundary'
+import { ErrorToast } from '../components/Toast/ErrorToast'
+import { NotificationToast } from '../components/Toast/NotificationToast'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
