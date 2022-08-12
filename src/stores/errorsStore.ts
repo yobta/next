@@ -45,7 +45,7 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
   }
 }
 
-export const useError = (): ErrorLike | undefined => {
+export const useError = (): [ErrorLike | undefined, number] => {
   const errors = useObservable(errorsStore)
-  return errors[0]
+  return [errors[0], errors.length]
 }
