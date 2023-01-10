@@ -1,5 +1,5 @@
-import { observableYobta } from '@yobta/stores'
-import { useObservable } from '@yobta/stores/react'
+import { storeYobta } from '@yobta/stores'
+import { useYobta } from '@yobta/stores/react'
 import { YobtaErrorReporter } from '@yobta/validator'
 
 export interface ErrorLike {
@@ -8,24 +8,24 @@ export interface ErrorLike {
   type?: string
 }
 
-const errorsStore = observableYobta<ErrorLike[]>([])
+const errorsStore = storeYobta<ErrorLike[]>([])
 
 export const pushError = (error: ErrorLike): void => {
-  errorsStore.next((last) => {
-    const newErrors = last.some((left) => left.message === error.message)
-      ? last
-      : [...last, error]
-
-    return newErrors
-  })
+  const last = errorsStore.last()
+  const state = last.some((left) => left.message === error.message)
+    ? last
+    : [...last, error]
+  errorsStore.next(state as ErrorLike[])
 }
 
 export const popError = (): void => {
-  errorsStore.next(([, ...last]) => last)
+  const [, ...state] = errorsStore.last()
+  errorsStore.next(state)
 }
 
 export const omitYobtaErrors = (): void => {
-  errorsStore.next((last) => last.filter(({ type }) => type !== 'YobtaError'))
+  const state = errorsStore.last().filter(({ type }) => type !== 'YobtaError')
+  errorsStore.next(state)
 }
 
 export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
@@ -46,6 +46,6 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
 }
 
 export const useError = (): [ErrorLike | undefined, number] => {
-  const errors = useObservable(errorsStore)
+  const errors = useYobta(errorsStore)
   return [errors[0], errors.length]
 }
