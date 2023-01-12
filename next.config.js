@@ -1,3 +1,4 @@
+const childProcess = require('child_process');
 /* eslint-disable import/order */
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -9,11 +10,16 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-const revision = require('child_process')
-  .execSync('git rev-parse HEAD')
-  .toString()
-  .trim()
-  .substring(0, 5)
+let revision;
+try {
+  revision = childProcess
+    .execSync('git rev-parse HEAD')
+    .toString()
+    .trim()
+    .substring(0, 5)
+} catch {
+  revision = (process.env.VERCEL_GIT_COMMIT_SHA || 'fallback_revision').substring(0, 5);
+}
 
 const plugins = [withMDX]
 
