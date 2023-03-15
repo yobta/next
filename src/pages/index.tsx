@@ -1,3 +1,5 @@
+import type { NextPage } from 'next'
+
 import { Input } from '@yobta/ui'
 import {
   asyncYobta,
@@ -9,11 +11,10 @@ import {
   stringYobta,
   validityYobta,
 } from '@yobta/validator'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { pushError } from '../stores/errorsStore'
-import { pushNotification } from '../stores/notificationStore'
+import { pushError } from '../components/Errors/errorsStore'
+import { pushNotification } from '../components/Notifications/notificationStore'
 
 const handleForm = asyncYobta(
   formYobta(),
