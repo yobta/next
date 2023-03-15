@@ -13,8 +13,8 @@ import {
 } from '@yobta/validator'
 import Head from 'next/head'
 
-import { pushError } from '../stores/errorsStore'
-import { pushNotification } from '../stores/notificationStore'
+import { pushError } from '../components/Errors/errorsStore'
+import { pushNotification } from '../components/Notifications/notificationStore'
 
 const handleForm = asyncYobta(
   formYobta(),
