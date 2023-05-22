@@ -1,27 +1,31 @@
 dev:
-	npm run dev
+	pnpm run dev
 
 lint:
-	npm run lint
+	pnpm run lint
 
 pretty:
-	npm run prettify
+	pnpm run prettify
 
 test:
-	npm run test:watch
+	pnpm run test:watch
 
 typecheck:
-	npm run typecheck
+	pnpm run typecheck
 
 check:
 	make typecheck
 	make lint
-	npm run test
+	pnpm run test
 
 up:
-	npm run ncu
-	npm i
+	pnpm update
+	pnpm i
 
 build:
 	make check
-	npm run build
+	pnpm run build
+
+i:
+	rm -rf node_modules
+	pnpm i
