@@ -6,7 +6,7 @@
     "node": ">=16.0.0 || >=18.0.0"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "prettify": "npx prettier --write .",
     "start": "next start",
@@ -18,7 +18,6 @@
   "dependencies": {
     "@mdx-js/loader": "^2.3.0",
     "@next/mdx": "^13.4.4",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
     "@yobta/stores": "0.2.3",
     "@yobta/ui": "^0.0.49",

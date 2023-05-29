@@ -1,3 +1,4 @@
+/* eslint-disable n/global-require */
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
@@ -97,5 +98,5 @@ module.exports = {
       opacity: ['dark'],
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [require('@tailwindcss/typography')],
 }
