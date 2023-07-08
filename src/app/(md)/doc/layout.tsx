@@ -1,4 +1,9 @@
+'use client'
+import { Home } from '@yobta/ui'
+import Link from 'next/link'
 import type { FunctionComponent, ReactNode } from 'react'
+
+import css from './layout.module.scss'
 
 type Props = {
   children: ReactNode
@@ -6,7 +11,13 @@ type Props = {
 
 const MdLayout: FunctionComponent<Props> = ({ children }) => {
   return (
-    <main className="prose container max-w-lg mx-auto my-16">{children}</main>
+    <>
+      <Link className="yobta-menu-item" href="/">
+        <Home />
+        Home
+      </Link>
+      <main className={css.mdLayout}>{children}</main>
+    </>
   )
 }
 
