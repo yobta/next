@@ -19,8 +19,7 @@ check:
 	pnpm run test
 
 up:
-	pnpm update
-	pnpm i
+	pnpm up -L
 
 build:
 	make check
