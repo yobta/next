@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'App Yobta',
 }
 
-const Home: FunctionComponent = () => {
+const HomePage: FunctionComponent = () => {
   return (
     <>
       <Head>
@@ -28,4 +28,4 @@ const Home: FunctionComponent = () => {
   )
 }
 
-export default Home
+export default HomePage
