@@ -1,43 +1,15 @@
-'use client'
-import { Input } from '@yobta/ui'
-import {
-  asyncYobta,
-  awaitSubmitYobta,
-  enumYobta,
-  formYobta,
-  requiredYobta,
-  shapeYobta,
-  stringYobta,
-  validityYobta,
-} from '@yobta/validator'
-import type { NextPage } from 'next'
+import type { Metadata } from 'next'
 import Head from 'next/head'
+import type { FunctionComponent } from 'react'
 
-import { pushError } from '../components/Errors/errorsStore'
-import { pushNotification } from '../components/Notifications/notificationStore'
+import { FormDemo } from './FormDemo'
 
-const handleForm = asyncYobta(
-  formYobta(),
-  shapeYobta({
-    message: [requiredYobta('Please write a message'), stringYobta()],
-    target: [
-      requiredYobta('Please select a type'),
-      enumYobta(['notification', 'error']),
-    ],
-  }),
-  requiredYobta(),
-  awaitSubmitYobta(async ({ message, target }) => {
-    if (target === 'error') {
-      const error = new Error(message)
-      pushError(error)
-    } else {
-      pushNotification({ message })
-    }
-  }),
-  validityYobta()
-)
+export const metadata: Metadata = {
+  manifest: '/manifest.json',
+  title: 'App Yobta',
+}
 
-const Home: NextPage = () => {
+const Home: FunctionComponent = () => {
   return (
     <>
       <Head>
@@ -48,32 +20,7 @@ const Home: NextPage = () => {
 
       <main className="container max-w-lg mx-auto px-4">
         <h1 className="text-2xl my-4">Welcome Yobta</h1>
-        <form noValidate onSubmit={handleForm}>
-          <Input caption="Message yobta" name="message" />
-          <div className="yobta-menu">
-            <label className="yobta-menu-item">
-              <input
-                className="yobta-radio yobta-addon"
-                name="target"
-                type="radio"
-                value="error"
-              />
-              Error
-            </label>
-            <label className="yobta-menu-item">
-              <input
-                className="yobta-radio yobta-addon"
-                name="target"
-                type="radio"
-                value="notification"
-              />
-              Notification
-            </label>
-          </div>
-          <button className="yobta-button-primary" type="submit">
-            Yarr
-          </button>
-        </form>
+        <FormDemo />
       </main>
 
       <footer>footer</footer>
