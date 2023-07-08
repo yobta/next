@@ -1,10 +1,10 @@
 import { createStore } from '@yobta/stores'
 import { useStore } from '@yobta/stores/react'
-import { YobtaErrorReporter } from '@yobta/validator'
+import type { YobtaErrorReporter } from '@yobta/validator'
 
 export interface ErrorLike {
-  name: string
   message: string
+  name: string
   type?: string
 }
 
@@ -35,8 +35,8 @@ export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
   const rootLevelErrors = errors.filter(({ field }) => field === '@')
   if (rootLevelErrors.length < errors.length) {
     pushError({
-      name: 'Error!',
       message: 'Need to fill out a form',
+      name: 'Error!',
       type: 'YobtaError',
     })
   }

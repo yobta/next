@@ -24,8 +24,8 @@ export const NotificationToast = (): JSX.Element => {
           </div>
           <button
             className="yobta-button rounded-full w-12 h-12 p-0"
-            type="button"
             onClick={close}
+            type="button"
           >
             <Cross className="w-full" />
           </button>

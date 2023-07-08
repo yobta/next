@@ -1,4 +1,5 @@
-import { Component, ErrorInfo, ReactNode } from 'react'
+import type { ErrorInfo, ReactNode } from 'react';
+import { Component } from 'react'
 
 import { parseUnknownError } from '../../../util/parseUnknownError'
 import { reportError } from '../../../util/reportError'

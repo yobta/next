@@ -1,9 +1,9 @@
 'use client'
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
 
-import { ConnectionToast } from '../components/Notifications/ConnectionToast'
 import { ErrorBoundary } from '../components/Errors/ErrorBoundary'
 import { ErrorToast } from '../components/Errors/ErrorToast'
+import { ConnectionToast } from '../components/Notifications/ConnectionToast'
 import { NotificationToast } from '../components/Notifications/NotificationToast'
 
 type Props = {

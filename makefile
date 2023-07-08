@@ -4,6 +4,9 @@ dev:
 lint:
 	pnpm run lint
 
+lint-fix:
+	pnpm run lint:fix
+
 pretty:
 	pnpm run prettify
 
@@ -19,8 +22,7 @@ check:
 	pnpm run test
 
 up:
-	pnpm update
-	pnpm i
+	pnpm up -L
 
 build:
 	make check
