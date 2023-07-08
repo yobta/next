@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@logux/eslint-config': ^51.0.0
   '@mdx-js/loader': ^2.3.0
+  '@mdx-js/react': ^2.3.0
   '@next/mdx': ^13.4.9
   '@tailwindcss/typography': ^0.5.9
   '@types/lodash': ^4.14.195
@@ -45,7 +46,8 @@ specifiers:
 
 dependencies:
   '@mdx-js/loader': 2.3.0_webpack@5.88.1
-  '@next/mdx': 13.4.9_@mdx-js+loader@2.3.0
+  '@mdx-js/react': 2.3.0_react@18.2.0
+  '@next/mdx': 13.4.9_msthxdjvrhmdkfpqqalumiidgq
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.2
   '@yobta/stores': 0.2.6
   '@yobta/ui': 0.0.51
@@ -476,6 +478,16 @@ packages:
       - supports-color
     dev: false
 
+  /@mdx-js/react/2.3.0_react@18.2.0:
+    resolution: {integrity: sha512-zQH//gdOmuu7nt2oJR29vFhDv88oGPmVw6BggmrHeMI+xgEkp1B2dX9/bMBSYtK0dyLX/aOmesKS09g222K1/g==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.5
+      '@types/react': 18.2.14
+      react: 18.2.0
+    dev: false
+
   /@next/env/13.4.9:
     resolution: {integrity: sha512-vuDRK05BOKfmoBYLNi2cujG2jrYbEod/ubSSyqgmEx9n/W3eZaJQdRNhTfumO+qmq/QTzLurW487n/PM/fHOkw==}
     dev: false
@@ -486,7 +498,7 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /@next/mdx/13.4.9_@mdx-js+loader@2.3.0:
+  /@next/mdx/13.4.9_msthxdjvrhmdkfpqqalumiidgq:
     resolution: {integrity: sha512-6ALqgOUsHWFWCl5LaYM96RzjBb/+Ca8IxVLhyZ4ukOZkFlYXInJmVLZhXWDxes7b8iVMMKZNgvNJR9dKLaGAQw==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
@@ -498,6 +510,7 @@ packages:
         optional: true
     dependencies:
       '@mdx-js/loader': 2.3.0_webpack@5.88.1
+      '@mdx-js/react': 2.3.0_react@18.2.0
       source-map: 0.7.4
     dev: false
 
@@ -727,7 +740,6 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom/18.2.6:
     resolution: {integrity: sha512-2et4PDvg6PVCyS7fuTc4gPoksV58bW0RwSxWKcPRcHZf0PRUGq03TKcD/rUHe3azfV6/5/biUBJw+HhCQjaP0A==}
@@ -741,11 +753,9 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
-    dev: true
 
   /@types/scheduler/0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
-    dev: true
 
   /@types/semver/7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}

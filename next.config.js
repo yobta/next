@@ -1,10 +1,11 @@
+/** @type {import('next').NextConfig} */
 const childProcess = require('child_process')
 /* eslint-disable import/order */
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
     rehypePlugins: [],
+    remarkPlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
@@ -29,11 +30,11 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_REVISION: revision,
   },
-  experimental: { esmExternals: true },
+  experimental: { esmExternals: true, mdxRs: true },
+  generateBuildId: async () => revision,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   poweredByHeader: false,
   reactStrictMode: true,
-  generateBuildId: async () => revision,
 }
 
 module.exports = () => plugins.reduce((acc, next) => next(acc), nextConfig)
