@@ -1,12 +1,9 @@
 # Yobta Next
 
-A pre-configured yobta template for nextjs
+A pre-configured yobta boilerplate for nextjs
+
+## Install
 
 ```
 npx yobta next my-app-name
 ```
-
-## Conventions and Prctices
-
-Working with forms
-Handling errors

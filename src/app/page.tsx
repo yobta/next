@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import type { FunctionComponent } from 'react'
 
 import { FormDemo } from './FormDemo'
@@ -23,7 +24,11 @@ const HomePage: FunctionComponent = () => {
         <FormDemo />
       </main>
 
-      <footer>footer</footer>
+      <footer className="text-center">
+        <Link className="underline" href="/doc">
+          Doc
+        </Link>
+      </footer>
     </>
   )
 }
