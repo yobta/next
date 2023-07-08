@@ -4,6 +4,9 @@ dev:
 lint:
 	pnpm run lint
 
+lint-fix:
+	pnpm run lint:fix
+
 pretty:
 	pnpm run prettify
 

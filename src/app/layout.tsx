@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react'
+import type { FunctionComponent } from 'react'
+
+import { Providers } from './Providers'
 
 import '../styles/globals.css'
-import { Providers } from './Providers'
 
 type Props = {
   children: JSX.Element

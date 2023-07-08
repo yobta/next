@@ -1,6 +1,6 @@
 import { Clock, Cross, Toast } from '@yobta/ui'
 
-import { useError, popError } from '../errorsStore'
+import { popError, useError } from '../errorsStore'
 
 export const ErrorToast = (): JSX.Element => {
   const [error] = useError()
@@ -25,9 +25,9 @@ export const ErrorToast = (): JSX.Element => {
               </div>
             </div>
             <button
-              type="button"
               className="yobta-button w-12 h-12 p-0 rounded-full shrink-0"
               onClick={close}
+              type="button"
             >
               <Cross />
             </button>
