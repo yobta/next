@@ -26,16 +26,6 @@ try {
 
 const plugins = [withMDX]
 
-const domains = 'example.com *.example.com'
-
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-inline';
-  child-src ${domains};
-  style-src 'self' 'unsafe-inline';
-  font-src 'self';
-`
-
 const nextConfig = {
   env: {
     NEXT_PUBLIC_REVISION: revision,
@@ -74,10 +64,6 @@ const nextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
           },
         ],
         source: '/(.*)',
