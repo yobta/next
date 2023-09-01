@@ -6,7 +6,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' $nonce-tag;
   child-src $domains-tag;
-  style-src 'self' $nonce-tag;
+  style-src 'self' 'unsafe-inline';
   font-src 'self';
 `.replace(/\s{2,}/g, ' ')
 
