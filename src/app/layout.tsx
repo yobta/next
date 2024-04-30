@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react'
 
 import { Body } from './Body'
 
-import '../styles/globals.css'
+import './globals.css'
 
 type Props = {
   children: JSX.Element
