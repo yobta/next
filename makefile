@@ -1,16 +1,16 @@
-dev:
+d:
 	pnpm run dev
 
-lint:
+l:
 	pnpm run lint
 
-lint-fix:
+lf:
 	pnpm run lint:fix
 
-pretty:
+p:
 	pnpm run prettify
 
-test:
+t:
 	pnpm run test:watch
 
 typecheck:
@@ -24,7 +24,7 @@ check:
 up:
 	pnpm up -L
 
-build:
+b:
 	make check
 	pnpm run build
 
