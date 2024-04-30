@@ -18,7 +18,7 @@ typecheck:
 
 check:
 	make typecheck
-	make lint
+	make l
 	pnpm run test
 
 up:

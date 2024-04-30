@@ -12,7 +12,6 @@
     "prettify": "npx prettier --wrinte .",
     "start": "next start",
     "lint": "next lint",
-    "l": "eslint 'src/**/*.{ts,tsx}'",
     "lint:fix": "next lint --fix",
     "test": "vitest src --coverage --run",
     "test:watch": "vitest src --coverage",
