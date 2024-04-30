@@ -39,7 +39,13 @@ const handleForm = asyncYobta(
 export const FormDemo: FunctionComponent = () => {
   return (
     <form noValidate onSubmit={handleForm}>
-      <Input caption="Message yobta" crossOrigin={undefined} name="message" />
+      <Input
+        caption="Message yobta"
+        name="message"
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+        crossOrigin={undefined}
+      />
       <div className="yobta-menu">
         <label className="yobta-menu-item">
           <input
