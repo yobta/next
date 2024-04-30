@@ -22,9 +22,7 @@ export const popNotification = (): void => {
   notificationStore.next(state)
 }
 
-const getServerSnapshot = (): NotificationLike[] => []
-
 export const useNotification = (): NotificationLike | undefined => {
-  const notifications = useStore(notificationStore, { getServerSnapshot })
+  const notifications = useStore(notificationStore)
   return notifications[0]
 }
