@@ -1,8 +1,8 @@
-import type { ErrorInfo, ReactNode } from 'react';
+import type { ErrorInfo, ReactNode } from 'react'
 import { Component } from 'react'
 
-import { parseUnknownError } from '../../../util/parseUnknownError'
-import { reportError } from '../../../util/reportError'
+import { parseUnknownError } from '../../../shared/parseUnknownError'
+import { reportError } from '../../../shared/reportError'
 import { UnexpectedError } from '../UnexpectedError'
 
 type Props = {
