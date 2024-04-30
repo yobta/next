@@ -41,10 +41,10 @@ export const FormDemo: FunctionComponent = () => {
     <form noValidate onSubmit={handleForm}>
       <Input
         caption="Message yobta"
+        crossOrigin={undefined}
         name="message"
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
-        crossOrigin={undefined}
       />
       <div className="yobta-menu">
         <label className="yobta-menu-item">
