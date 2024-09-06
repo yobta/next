@@ -33,7 +33,7 @@ const handleForm = asyncYobta(
       pushNotification({ message })
     }
   }),
-  validityYobta()
+  validityYobta(pushError)
 )
 
 export const FormDemo: FunctionComponent = () => {

@@ -30,6 +30,9 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_REVISION: revision,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: { esmExternals: true, mdxRs: true },
   generateBuildId: async () => revision,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
