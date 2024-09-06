@@ -1,9 +1,9 @@
+import './globals.css'
+
 import type { Metadata } from 'next'
 import type { FunctionComponent } from 'react'
 
 import { Body } from './Body'
-
-import './globals.css'
 
 type Props = {
   children: JSX.Element
