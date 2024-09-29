@@ -10,6 +10,9 @@ lf:
 p:
 	pnpm run prettify
 
+s:
+	pnpm run start
+
 t:
 	pnpm run test:watch
 

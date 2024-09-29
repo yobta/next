@@ -1,6 +1,6 @@
 import { createStore } from '@yobta/stores'
 import { useStore } from '@yobta/stores/react'
-import type { YobtaErrorReporter } from '@yobta/validator'
+import type { YobtaErrorsCallback } from '@yobta/validator'
 
 export interface ErrorLike {
   message: string
@@ -28,8 +28,8 @@ export const omitYobtaErrors = (): void => {
   errorsStore.next(state)
 }
 
-export const handleYobtaErrors: YobtaErrorReporter = (errors, { event }) => {
-  if (event?.type !== 'submit') {
+export const handleYobtaErrors: YobtaErrorsCallback = (errors, { event }) => {
+  if (event instanceof Event && event.type !== 'submit') {
     return
   }
   const rootLevelErrors = errors.filter(({ field }) => field === '@')

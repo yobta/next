@@ -1,31 +1,32 @@
 'use client'
 import { Input } from '@yobta/ui'
 import {
-  asyncYobta,
-  awaitSubmitYobta,
-  enumYobta,
-  formYobta,
-  requiredYobta,
-  shapeYobta,
-  stringYobta,
-  validityYobta,
+  asyncSubmit,
+  createAsyncValidator,
+  form,
+  oneOf,
+  pipe,
+  required,
+  shape,
+  string,
+  validity,
 } from '@yobta/validator'
 import type { FunctionComponent } from 'react'
 
 import { pushError } from '../components/Errors/errorsStore'
 import { pushNotification } from '../components/Notifications/notificationStore'
 
-const handleForm = asyncYobta(
-  formYobta(),
-  shapeYobta({
-    message: [requiredYobta('Please write a message'), stringYobta()],
-    target: [
-      requiredYobta('Please select a type'),
-      enumYobta(['notification', 'error']),
-    ],
+const handleForm = createAsyncValidator(
+  form(),
+  shape({
+    message: pipe(string(), required('Please write a message')),
+    target: pipe(
+      required('Please select a type'),
+      oneOf(new Set(['error', 'notification']))
+    ),
   }),
-  requiredYobta(),
-  awaitSubmitYobta(async ({ message, target }) => {
+  required(),
+  asyncSubmit(async ({ message, target }) => {
     if (target === 'error') {
       const error = new Error(message)
       pushError(error)
@@ -33,7 +34,7 @@ const handleForm = asyncYobta(
       pushNotification({ message })
     }
   }),
-  validityYobta(pushError)
+  validity(pushError)
 )
 
 export const FormDemo: FunctionComponent = () => {
