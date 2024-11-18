@@ -1,5 +1,4 @@
 'use client'
-import { Input } from '@yobta/ui'
 import {
   asyncSubmit,
   createAsyncValidator,
@@ -40,13 +39,7 @@ const handleForm = createAsyncValidator(
 export const FormDemo: FunctionComponent = () => {
   return (
     <form noValidate onSubmit={handleForm}>
-      <Input
-        caption="Message yobta"
-        crossOrigin={undefined}
-        name="message"
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
-      />
+      <input name="message" />
       <div className="yobta-menu">
         <label className="yobta-menu-item">
           <input

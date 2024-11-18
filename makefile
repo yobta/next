@@ -19,7 +19,7 @@ t:
 typecheck:
 	pnpm run typecheck
 
-check:
+c:
 	make typecheck
 	make l
 	pnpm run test
