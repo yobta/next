@@ -19,8 +19,10 @@ export const Body: FunctionComponent<Props> = ({ children }) => {
     <body className={clsx(segment === '(md)' && 'yobta-info')}>
       <ErrorBoundary>
         {children}
-        <ErrorToast />
-        <NotificationToast />
+        <div className="toast toast-end toast-bottom">
+          <ErrorToast />
+          <NotificationToast />
+        </div>
         <ConnectionToast />
       </ErrorBoundary>
     </body>

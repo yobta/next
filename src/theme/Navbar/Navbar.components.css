@@ -1,0 +1,9 @@
+.navbar-center {
+  @apply grid text-center leading-4;
+}
+.navbar-title {
+  @apply font-medium text-nav-bar-title;
+}
+.navbar-subtitle {
+  @apply font-thin text-xs;
+}

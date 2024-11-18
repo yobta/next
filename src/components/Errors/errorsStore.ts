@@ -45,7 +45,7 @@ export const handleYobtaErrors: YobtaErrorsCallback = (errors, { event }) => {
   }
 }
 
-export const useError = (): [ErrorLike | undefined, number] => {
+export const useErrors = (): ErrorLike[] => {
   const errors = useStore(errorsStore)
-  return [errors[0], errors.length]
+  return errors.slice(-3)
 }

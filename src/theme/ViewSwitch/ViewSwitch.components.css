@@ -1,0 +1,248 @@
+:root {
+  --vs-in: 0.4s;
+  --vs-out: 0.2s;
+  --vs-size: 3rem;
+  --vs-delay: calc(var(--vs-out) * 1.1);
+}
+
+.view-switch {
+  @apply overflow-clip relative pointer-events-auto;
+}
+
+/* .view-switch > * {} */
+
+.switch--muted {
+  --vs-in: 0s;
+  --vs-out: 0s;
+}
+
+.switch-out {
+  @apply pointer-events-none hidden;
+  animation: switch-out forwards ease;
+  animation-duration: var(--vs-out);
+}
+.view-switch > *:not([aria-current="true"]) {
+  @apply switch-out absolute z-[-1];
+}
+
+.switch-in {
+  @apply pointer-events-auto;
+  animation: switch-in forwards ease;
+  animation-delay: var(--vs-delay);
+  animation-duration: var(--vs-in);
+  opacity: 0;
+}
+.view-switch__item--current,
+.view-switch > [aria-current="true"] {
+  @apply switch-in relative;
+}
+
+/* .view-switch > [aria-current="true"] ~ * {
+} */
+
+@keyframes switch-in {
+  0% {
+    display: auto;
+    opacity: 0;
+  }
+  100% {
+    display: auto;
+    opacity: 1;
+  }
+}
+
+@keyframes switch-out {
+  0% {
+    display: inherit;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+/* Left */
+.switch-out-left {
+  @apply pointer-events-none hidden;
+  animation: switch-out-left forwards ease;
+  animation-duration: var(--vs-out);
+}
+
+.view-switch--left > *:not([aria-current="true"]),
+.view-switch--forward > *:not([aria-current="true"]) {
+  @apply switch-out-left;
+}
+
+.switch-in-left {
+  animation: switch-in-left forwards ease;
+  animation-duration: var(--vs-in);
+  animation-delay: var(--vs-delay);
+  opacity: 0;
+}
+.view-switch--left > [aria-current="true"],
+.view-switch--backward > [aria-current="true"] {
+  @apply switch-in-left;
+}
+
+@keyframes switch-out-left {
+  0% {
+    display: auto;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateX(calc(var(--vs-size) * -1));
+  }
+}
+
+@keyframes switch-in-left {
+  0% {
+    display: auto;
+    opacity: 0;
+    transform: translateX(calc(var(--vs-size) * -1));
+  }
+  100% {
+    display: auto;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Right */
+
+.switch-out-right {
+  @apply pointer-events-none hidden;
+  animation: switch-out-right forwards ease;
+  animation-duration: var(--vs-out);
+}
+.view-switch--right > *:not([aria-current="true"]),
+.view-switch--backward > *:not([aria-current="true"]) {
+  @apply switch-out-right;
+}
+
+.switch-in-right {
+  animation: switch-in-right forwards ease;
+  animation-delay: var(--vs-delay);
+  animation-duration: var(--vs-in);
+  opacity: 0;
+}
+.view-switch--right > [aria-current="true"],
+.view-switch--forward > [aria-current="true"] {
+  @apply switch-in-right;
+}
+
+@keyframes switch-out-right {
+  0% {
+    display: auto;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateX(var(--vs-size));
+  }
+}
+
+@keyframes switch-in-right {
+  0% {
+    display: auto;
+    opacity: 0;
+    transform: translateX(var(--vs-size));
+  }
+  100% {
+    display: auto;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.switch-out-bottom {
+  @apply pointer-events-none hidden;
+  animation: switch-out-bottom forwards ease;
+  animation-duration: var(--vs-out);
+}
+.view-switch--bottom > *:not([aria-current="true"]) {
+  @apply switch-out-bottom;
+}
+
+.switch-in-bottom {
+  animation: switch-in-bottom forwards ease;
+  animation-delay: var(--vs-delay);
+  animation-duration: var(--vs-in);
+  opacity: 0;
+}
+.view-switch--bottom > [aria-current="true"] {
+  @apply switch-in-bottom;
+}
+
+@keyframes switch-out-bottom {
+  0% {
+    display: auto;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateY(var(--vs-size));
+  }
+}
+
+@keyframes switch-in-bottom {
+  0% {
+    display: auto;
+    opacity: 0;
+    transform: translateY(var(--vs-size));
+  }
+  100% {
+    display: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.switch-out-top {
+  @apply pointer-events-none hidden;
+  animation: switch-out-top forwards ease;
+  animation-duration: var(--vs-out);
+}
+.view-switch--top > *:not([aria-current="true"]) {
+  @apply switch-out-top;
+}
+
+.switch-in-top {
+  animation: switch-in-top forwards ease;
+  animation-delay: var(--vs-delay);
+  animation-duration: var(--vs-in);
+  opacity: 0;
+}
+.view-switch--top > [aria-current="true"] {
+  @apply switch-in-top;
+}
+
+@keyframes switch-out-top {
+  0% {
+    display: auto;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateY(calc(var(--vs-size) * -1));
+  }
+}
+
+@keyframes switch-in-top {
+  0% {
+    display: auto;
+    opacity: 0;
+    transform: translateY(calc(var(--vs-size) * -1));
+  }
+  100% {
+    display: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,137 @@
+.btn {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-wrap: balance;
+  transition: filter;
+  @apply relative text-sm bg-paper-2 rounded-btn h-btn px-btn text-btn
+    font-weight-btn gap-btn;
+
+  &-lg {
+    @apply rounded-btn-lg h-btn-lg px-btn-lg text-btn-lg font-weight-btn-lg
+      gap-btn-lg;
+  }
+
+  &-sm {
+    @apply rounded-btn-sm h-btn-sm px-btn-sm text-btn-sm font-weight-btn-sm
+      gap-btn-sm;
+  }
+
+  &-xs {
+    @apply rounded-btn-xs h-btn-xs px-btn-xs text-btn-xs font-weight-btn-xs
+      gap-btn-xs;
+  }
+
+  &:active::before {
+    opacity: 0.24;
+  }
+  &::before {
+    @apply absolute top-0 left-0 right-0 bottom-0;
+    opacity: 0;
+    transition: opacity 0.7s;
+    display: block;
+    background-color: currentColor;
+    border-radius: inherit;
+    content: '';
+  }
+  &neutral {
+    @apply bg-neutral;
+  }
+
+  &-primary {
+    @apply bg-primary;
+  }
+
+  &-secondary {
+    @apply bg-secondary;
+  }
+
+  &-accent {
+    @apply bg-accent;
+  }
+
+  &-ghost {
+    @apply bg-transparent text-inherit;
+  }
+
+  &-link {
+    @apply bg-transparent underline;
+  }
+
+  &-info {
+    @apply bg-info;
+  }
+
+  &-error {
+    @apply bg-error;
+  }
+
+  &-success {
+    @apply bg-success;
+  }
+
+  &-warning {
+    @apply bg-warning;
+  }
+}
+
+.btn-outline {
+  @apply bg-transparent border border-current;
+  border-width: --border-btn;
+  &.btn-neutral {
+    @apply text-neutral;
+  }
+
+  &.btn-primary {
+    @apply text-primary;
+  }
+
+  &.btn-secondary {
+    @apply text-secondary;
+  }
+
+  &.btn-accent {
+    @apply text-accent;
+  }
+
+  &.btn-ghost {
+    @apply text-transparent;
+  }
+
+  &.btn-link {
+    @apply text-transparent underline;
+  }
+
+  &.btn-info {
+    @apply text-info;
+  }
+
+  &.btn-error {
+    @apply text-error;
+  }
+
+  &.btn-success {
+    @apply text-success;
+  }
+
+  &.btn-warning {
+    @apply text-warning;
+  }
+}
+
+.btn-circle {
+  @apply rounded-full p-0;
+}
+
+.btn-disabled {
+  @apply disabled;
+}
+
+@media (hover: hover) {
+  .btn:hover:active::before {
+    opacity: 0.24;
+  }
+
+  .btn:hover::before {
+    @apply duration-150;
+    opacity: 0.12;
+  }
+}

@@ -1,0 +1,54 @@
+.bg-base-100, .bg-paper {
+  color: var(--fallback-bc, oklch(var(--bc)));
+  border-color: currentcolor;
+}
+
+.bg-base-200, .bg-paper-2 {
+  color: var(--fallback-bc, oklch(var(--bc)));
+  border-color: currentcolor;
+}
+
+.bg-base-300, .bg-paper-3 {
+  color: var(--fallback-bc, oklch(var(--bc)));
+  border-color: currentcolor;
+}
+
+.bg-primary {
+  color: var(--fallback-pc, oklch(var(--pc)));
+  border-color: currentcolor;
+}
+
+.bg-secondary {
+  color: var(--fallback-sc, oklch(var(--sc)));
+  border-color: currentcolor;
+}
+
+.bg-accent {
+  color: var(--fallback-ac, oklch(var(--ac)));
+  border-color: currentcolor;
+}
+
+.bg-neutral {
+  color: var(--fallback-nc, oklch(var(--nc)));
+  border-color: currentcolor;
+}
+
+.bg-info {
+  color: var(--fallback-inc, oklch(var(--inc)));
+  border-color: currentcolor;
+}
+
+.bg-warning {
+  color: var(--fallback-wac, oklch(var(--wac)));
+  border-color: currentcolor;
+}
+
+.bg-error {
+  color: var(--fallback-erc, oklch(var(--erc)));
+  border-color: currentcolor;
+}
+
+.bg-success {
+  color: var(--fallback-suc, oklch(var(--suc)));
+  border-color: currentcolor;
+}

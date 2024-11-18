@@ -1,0 +1,26 @@
+.card-hero {
+  @apply bg-paper rounded-[2.5rem] sm:rounded-[4rem] p-[2.5rem] sm:p-[4rem]
+    max-w-md mx-auto grid gap-4;
+
+  figure {
+    @apply mt-[-4rem] sm:mt-[-5.75rem];
+
+    img {
+      @apply rounded-xl sm:rounded-3xl w-full flex items-center justify-center
+        text-xs text-opacity-40 border border-paper border-opacity-20 bg-neutral
+        dark:bg-opacity-80 dark:brightness-[.64];
+    }
+  }
+
+  .card-body {
+    @apply text-center;
+  }
+
+  .card-title {
+    @apply text-2xl font-light;
+  }
+
+  .card-subtitle {
+    @apply text-sm font-light;
+  }
+}

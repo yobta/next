@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const HomePage: FunctionComponent = () => {
   return (
     <>
-      <main className="container max-w-lg mx-auto px-4">
+      <main className="container max-w-lg mx-auto px-4 border-2">
         <h1 className="text-2xl my-4">Welcome Yobta</h1>
         <FormDemo />
       </main>

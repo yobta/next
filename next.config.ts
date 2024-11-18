@@ -1,7 +1,10 @@
+import nextMdx from '@next/mdx'
+import type { NextConfig } from 'next'
+import childProcess from 'node:child_process'
+
 /** @type {import('next').NextConfig} */
-const childProcess = require('child_process')
-/* eslint-disable import/order */
-const withMDX = require('@next/mdx')({
+
+const withMDX = nextMdx({
   extension: /\.mdx?$/,
   options: {
     rehypePlugins: [],
@@ -12,6 +15,7 @@ const withMDX = require('@next/mdx')({
 })
 
 let revision
+
 try {
   revision = childProcess
     .execSync('git rev-parse HEAD')
@@ -26,7 +30,7 @@ try {
 
 const plugins = [withMDX]
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_REVISION: revision,
   },
@@ -40,4 +44,7 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = () => plugins.reduce((acc, next) => next(acc), nextConfig)
+const configWithPlugins = (): NextConfig =>
+  plugins.reduce<NextConfig>((acc, next) => next(acc), nextConfig)
+
+export default configWithPlugins

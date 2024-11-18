@@ -1,13 +1,13 @@
 {
-  "name": "next",
-  "version": "0.1.0",
+  "name": "app-yobta",
+  "version": "0.0.1",
   "private": true,
   "engines": {
     "node": ">=20.10.0"
   },
   "packageManager": "pnpm@8.15.6",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "prettify": "npx prettier --wrinte .",
     "start": "next start",
@@ -23,27 +23,22 @@
     "@next/mdx": "^15.0.3",
     "@tailwindcss/typography": "^0.5.15",
     "@yobta/stores": "0.3.2",
-    "@yobta/ui": "^0.0.51",
     "@yobta/validator": "^1.0.0",
     "@yobta/validator-react": "^0.0.2",
     "clsx": "^2.1.1",
-    "lodash": "^4.17.21",
+    "daisyui": "^4.12.14",
     "next": "^15.0.3",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-use": "^17.5.1",
-    "sass": "^1.81.0",
-    "typescript-eslint": "^8.15.0",
-    "webpack": "^5.96.1"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.3",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.15.0",
     "@logux/eslint-config": "^53.5.1",
-    "@types/lodash": "^4.17.13",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.9.0",
+    "@types/postcss-js": "^4.0.4",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.15.0",
@@ -62,10 +57,11 @@
     "eslint-plugin-promise": "^7.1.0",
     "happy-dom": "^15.11.6",
     "postcss": "^8.4.49",
+    "postcss-js": "^4.0.1",
     "prettier": "^3.3.3",
-    "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^3.4.15",
     "typescript": "5.6.3",
+    "typescript-eslint": "^8.15.0",
     "vitest": "^2.1.5"
   }
 }
