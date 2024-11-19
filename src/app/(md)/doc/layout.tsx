@@ -1,5 +1,5 @@
 'use client'
-import css from './layout.module.scss'
+import css from './layout.module.css'
 
 import Link from 'next/link'
 import type { FunctionComponent, ReactNode } from 'react'
