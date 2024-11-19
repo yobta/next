@@ -1,0 +1,29 @@
+.input {
+  @apply text-base;
+}
+
+
+
+
+label.input {
+  @apply rounded-input bg-paper font-light flex items-center
+  ring-2
+    ring-transparent transition duration-700 focus-within:ring-accent
+    focus-within:duration-150 focus-within:z-[1] gap-2;
+
+  input {
+    @apply bg-transparent outline-none;
+    &:last-child {
+      @apply text-right font-semibold grow;
+      &::placeholder {
+        @apply font-thin;
+      }
+    }
+  }
+}
+
+
+.textarea {
+  @apply text-base outline-none ring-2 ring-transparent transition duration-700 focus-visible:ring-accent
+    focus-visible:duration-150 focus-within:z-[1];
+}

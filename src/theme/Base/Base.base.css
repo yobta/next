@@ -1,0 +1,5 @@
+body {}
+
+.disabled {
+  @apply pointer-events-none opacity-40;
+}

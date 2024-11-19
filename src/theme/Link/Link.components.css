@@ -1,0 +1,23 @@
+:root {
+  --ui-link-oklch: 43.58% 0.2906 265.61;
+  --ui-link-hover-oklch: 57.73% 0.2342 276.95;
+  --ui-link-active-oklch: 61.33% 0.2843 310.88;
+  --ui-link-visited-oklch: 48.41% 0.1814 321.79;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui-link-oklch: 73% 0.14 283;
+    --ui-link-hover-oklch: 76.5% 0.1 285.1;
+    --ui-link-active-oklch: 69.1% 0.2 313.3;
+    --ui-link-visited-oklch: 74% 0.059 322.3;
+  }
+}
+
+.link {
+  @apply text-link hover:text-link-hover active:text-link-active visited:text-link-visited underline;
+}
+
+.links-box a {
+  @apply link;
+}

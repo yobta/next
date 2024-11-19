@@ -19,7 +19,7 @@ t:
 typecheck:
 	pnpm run typecheck
 
-check:
+c:
 	make typecheck
 	make l
 	pnpm run test
@@ -27,8 +27,7 @@ check:
 up:
 	pnpm up -L
 
-b:
-	make check
+b: c
 	pnpm run build
 
 i:

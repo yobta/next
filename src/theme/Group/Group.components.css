@@ -1,0 +1,88 @@
+:root {
+  --group-gap: 0.03125rem;
+  /* --group-gap: 0.0625rem; */
+  --rounded-group: var(--rounded-box);
+}
+
+.group {
+  @apply grid gap-group-gap rounded-box;
+}
+
+/* NOTE: Specificity hack: .group.group  */
+.group.group > * {
+  @apply rounded-none;
+}
+
+.group > :first-child,
+.action-group > :first-child {
+  @apply rounded-t-inherit;
+}
+
+.group > :last-child,
+.action-group > :last-child {
+  @apply rounded-b-inherit;
+}
+
+.group-outlined {
+  @apply p-group-gap bg-ink bg-opacity-30;
+}
+
+.group-separator {
+  @apply block w-4 select-none pointer-events-none;
+  height: var(--group-gap);
+  margin-top: calc(-1 * var(--group-gap));
+}
+.group-separator ~ * {
+  margin-top: calc(-1 * var(--group-gap));
+}
+
+.group-header, .group > header, .action-group > header {
+  @apply text-center py-[0.525rem];
+}
+
+.group-title {
+  @apply text-group-title leading-group-title font-semibold;
+}
+
+.group-subtitle {
+  @apply text-group-subtitle leading-group-subtitle font-light;
+}
+
+.group-body {
+  @apply p-4;
+}
+
+
+.group-paper > * {
+  @apply bg-paper;
+}
+.group-paper-2 > * {
+  @apply bg-paper-2;
+}
+.group-paper-3 > * {
+  @apply bg-paper-3;
+}
+.group-primary > * {
+  @apply bg-primary;
+}
+.group-secondary > * {
+  @apply bg-secondary;
+}
+.group-accent > * {
+  @apply bg-accent;
+}
+.group-neutral > * {
+  @apply bg-neutral;
+}
+.group-info > * {
+  @apply bg-info;
+}
+.group-warning > * {
+  @apply bg-warning;
+}
+.group-error > * {
+  @apply bg-error;
+}
+.group-success > * {
+  @apply bg-success;
+}
