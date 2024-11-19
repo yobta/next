@@ -27,8 +27,7 @@ c:
 up:
 	pnpm up -L
 
-b:
-	make check
+b: c
 	pnpm run build
 
 i:
